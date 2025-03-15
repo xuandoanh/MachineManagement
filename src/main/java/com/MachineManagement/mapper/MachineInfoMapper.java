@@ -1,7 +1,7 @@
-package java.com.MachineManagement.mapper;
+package com.MachineManagement.mapper;
 
-import java.com.MachineManagement.dto.MachineInfoDto;
-import java.com.MachineManagement.entity.MachineInfo;
+import com.MachineManagement.dto.MachineInfoDto;
+import com.MachineManagement.entity.MachineInfo;
 
 public class MachineInfoMapper {
      public static MachineInfoDto mapToDto(MachineInfo machineInfo) {

@@ -1,8 +1,8 @@
-package java.com.MachineManagement.dto;
+package com.MachineManagement.dto;
 
 import lombok.*;
 
-import java.com.MachineManagement.entity.MachineInfo;
+import com.MachineManagement.entity.MachineInfo;
 import java.util.List;
 
 @Getter

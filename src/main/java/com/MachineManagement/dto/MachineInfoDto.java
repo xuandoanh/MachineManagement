@@ -1,6 +1,6 @@
-package java.com.MachineManagement.dto;
+package com.MachineManagement.dto;
 
-import java.com.MachineManagement.entity.MachineGroup;
+import com.MachineManagement.entity.MachineGroup;
 
 import lombok.*;
 

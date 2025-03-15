@@ -1,6 +1,6 @@
-package java.com.MachineManagement.repository;
+package com.MachineManagement.repository;
 
-import java.com.MachineManagement.entity.OperatorInfo;
+import com.MachineManagement.entity.OperatorInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

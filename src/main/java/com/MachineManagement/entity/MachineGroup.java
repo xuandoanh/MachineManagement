@@ -1,5 +1,4 @@
-package java.com.MachineManagement.entity;
-
+package com.MachineManagement.entity;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -24,15 +23,15 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Builder
-@Table(name = "operator_group")
-public class OperatorGroup {
+@Table(name = "machine_group")
+public class MachineGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String groupName;
 
-    @OneToMany(mappedBy = "operatorGroup", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "machineGroup", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
-    private List<MachineInfo> operators;
+    private List<MachineInfo> machines;
 }

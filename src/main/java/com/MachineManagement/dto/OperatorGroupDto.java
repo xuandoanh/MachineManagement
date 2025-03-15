@@ -1,4 +1,4 @@
-package java.com.MachineManagement.dto;
+package com.MachineManagement.dto;
 
 import lombok.*;
 import java.util.List;

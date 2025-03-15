@@ -1,7 +1,7 @@
-package java.com.MachineManagement.mapper;
+package com.MachineManagement.mapper;
 
-import java.com.MachineManagement.dto.MachineGroupDto;
-import java.com.MachineManagement.entity.MachineGroup;
+import com.MachineManagement.dto.MachineGroupDto;
+import com.MachineManagement.entity.MachineGroup;
 
 public class MachineGroupMapper {
     public static MachineGroupDto mapToDto(MachineGroup machineGroup) {

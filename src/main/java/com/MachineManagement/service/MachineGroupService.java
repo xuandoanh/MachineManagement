@@ -1,6 +1,6 @@
-package java.com.MachineManagement.service;
+package com.MachineManagement.service;
 
-import java.com.MachineManagement.dto.MachineGroupDto;
+import com.MachineManagement.dto.MachineGroupDto;
 import java.util.List;
 
 public interface MachineGroupService {

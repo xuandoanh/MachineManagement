@@ -1,4 +1,4 @@
-package java.com.MachineManagement.entity;
+package com.MachineManagement.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 

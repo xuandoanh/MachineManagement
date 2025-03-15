@@ -1,6 +1,6 @@
-package java.com.MachineManagement.service;
+package com.MachineManagement.service;
 
-import java.com.MachineManagement.dto.MachineInfoDto;
+import com.MachineManagement.dto.MachineInfoDto;
 import java.util.List;
 
 public interface MachineInfoService {
