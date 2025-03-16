@@ -2,20 +2,18 @@ package com.MachineManagement.mapper;
 
 import com.MachineManagement.dto.MachineDataDto;
 import com.MachineManagement.entity.MachineData;
-import com.MachineManagement.entity.MachineInfo;
-import com.MachineManagement.entity.OperatorInfo;
 
 public class MachineDataMapper {
 
     public static MachineDataDto mapToDto(MachineData machineData) {
         return new MachineDataDto(
                 machineData.getId(),
-                machineData.getMachineInfo().getMachineId(),
+                machineData.getMachineInfo(),
                 machineData.getDateSql(),
                 machineData.getTimeSql(),
                 machineData.getStatus(),
                 machineData.getPower(),
-                machineData.getOperatorInfo().getOperatorId(),
+                machineData.getOpId(),
                 machineData.getOrCode(),
                 machineData.getDgCode(),
                 machineData.getPgTime(),
@@ -26,15 +24,15 @@ public class MachineDataMapper {
         );
     }
 
-    public static MachineData mapToEntity(MachineDataDto machineDataDto, MachineInfo machineInfo, OperatorInfo operatorInfo) {
+    public static MachineData mapToEntity(MachineDataDto machineDataDto) {
         return new MachineData(
                 machineDataDto.getId(),
-                machineInfo,
+                machineDataDto.getMachineInfo(),
                 machineDataDto.getDateSql(),
                 machineDataDto.getTimeSql(),
                 machineDataDto.getStatus(),
                 machineDataDto.getPower(),
-                operatorInfo,
+                machineDataDto.getOpId(),
                 machineDataDto.getOrCode(),
                 machineDataDto.getDgCode(),
                 machineDataDto.getPgTime(),

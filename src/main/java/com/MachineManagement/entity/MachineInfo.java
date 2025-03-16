@@ -1,18 +1,18 @@
 package com.MachineManagement.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
-
+@Entity
+@Table(name = "machine_info")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Builder
-@Table(name = "machine_info")
 public class MachineInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,11 +31,11 @@ public class MachineInfo {
     private String machineOffice;
 
     @ManyToOne
+    @JsonBackReference("machine-group-ref")
     @JoinColumn(name = "groupId", nullable = false)  // Foreign key referencing MachineGroup
     private MachineGroup machineGroup;
 
-    // ✅ Add OneToMany for MachineData
-    @OneToMany(mappedBy = "machineInfo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonManagedReference
+    @OneToMany(mappedBy = "machineInfo", cascade = CascadeType.ALL)
+    @JsonManagedReference("machine-data-ref")  // ✅ Ensure reference name is unique
     private List<MachineData> machineData;
 }

@@ -11,7 +11,8 @@ public class OperatorInfoMapper {
                 operatorInfo.getOperatorOffice(),
                 operatorInfo.getOperatorSection(),
                 operatorInfo.getOperatorStep(),
-                operatorInfo.getOperatorGroup()
+                operatorInfo.getOperatorGroup(),
+                operatorInfo.getMachineData()
         );
     }
 
@@ -22,7 +23,8 @@ public class OperatorInfoMapper {
             operatorInfoDto.getOperatorOffice(),
             operatorInfoDto.getOperatorSection(),
             operatorInfoDto.getOperatorStep(),
-            operatorInfoDto.getOperatorGroupId()
+            operatorInfoDto.getOperatorGroup(),
+            operatorInfoDto.getMachineData()
         );
     }
 }

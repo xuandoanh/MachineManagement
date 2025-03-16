@@ -30,11 +30,7 @@ public class OperatorGroupServiceImpl implements OperatorGroupService {
         OperatorGroup operatorGroup = operatorGroupRepository.findById(groupId)
                 .orElseThrow(() -> new RuntimeException("Operator Group not found: " + groupId));
         
-        operatorGroup.setGroupName(operatorGroupDto.getGroupName());
-        operatorGroup.setOperators(operatorGroupDto.getOperators().stream()
-                .map(OperatorInfoMapper::mapToEntity)
-                .collect(Collectors.toList()));
-        
+        operatorGroup.setGroupName(operatorGroupDto.getGroupName());   
         OperatorGroup updatedOperatorGroup = operatorGroupRepository.save(operatorGroup);
         return OperatorGroupMapper.mapToDto(updatedOperatorGroup);
     }

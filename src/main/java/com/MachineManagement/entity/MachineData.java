@@ -5,7 +5,7 @@ import lombok.*;
 import java.sql.Date;
 import java.sql.Time;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "CNCtoSQL")
 @Getter
@@ -14,14 +14,13 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 @NoArgsConstructor
 @Builder
 public class MachineData {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
     @JoinColumn(name = "machineId", nullable = false)
-    @JsonBackReference
+    @JsonBackReference("machine-data-ref")  // ✅ Ensure reference names match
     private MachineInfo machineInfo;    
 
     @Column(name = "Date_SQL", nullable = false)
@@ -36,8 +35,10 @@ public class MachineData {
     @Column(name = "Power", nullable = false)
     private int power;
 
-    @Column(name = "OpID", nullable = false)
-    private int opId;
+    @ManyToOne
+    @JoinColumn(name = "OpId", nullable = false)
+    @JsonBackReference("operator-data-ref")  // ✅ Fix: Use a unique reference name
+    private OperatorInfo operatorInfo;  
 
     @Column(name = "OrCode", length = 50)
     private String orCode;
@@ -60,3 +61,4 @@ public class MachineData {
     @Column(name = "BCode", length = 50)
     private String bCode;
 }
+

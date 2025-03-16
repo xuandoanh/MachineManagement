@@ -1,11 +1,10 @@
 package com.MachineManagement.entity;
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,22 +15,22 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+@Entity
+@Table(name = "machine_group")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Builder
-@Table(name = "machine_group")
 public class MachineGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "group_name", nullable = false)
     private String groupName;
 
-    @OneToMany(mappedBy = "machineGroup", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonManagedReference
+    @OneToMany(mappedBy = "machineGroup", cascade = CascadeType.ALL)
+    @JsonManagedReference("machine-group-ref")
     private List<MachineInfo> machines;
 }

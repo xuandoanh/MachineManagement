@@ -33,7 +33,7 @@ public class OperatorInfoServiceImpl implements OperatorInfoService {
         operatorInfo.setOperatorOffice(operatorInfoDto.getOperatorOffice());
         operatorInfo.setOperatorSection(operatorInfoDto.getOperatorSection());
         operatorInfo.setOperatorStep(operatorInfoDto.getOperatorStep());
-        operatorInfo.setOperatorGroup(operatorInfoDto.getOperatorGroupId());
+        operatorInfo.setOperatorGroup(operatorInfoDto.getOperatorGroup());
         
         OperatorInfo updatedOperatorInfo = operatorInfoRepository.save(operatorInfo);
         return OperatorInfoMapper.mapToDto(updatedOperatorInfo);

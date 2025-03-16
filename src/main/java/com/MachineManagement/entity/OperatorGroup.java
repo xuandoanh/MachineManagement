@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -18,13 +17,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
+@Table(name = "operator_group")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Builder
-@Table(name = "operator_group")
 public class OperatorGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +31,7 @@ public class OperatorGroup {
 
     private String groupName;
 
-    @OneToMany(mappedBy = "operatorGroup", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonManagedReference
+    @OneToMany(mappedBy = "operatorGroup", cascade = CascadeType.ALL)
+    @JsonManagedReference("operator-group-ref")
     private List<OperatorInfo> operators;
 }

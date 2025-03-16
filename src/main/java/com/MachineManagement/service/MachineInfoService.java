@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface MachineInfoService {
     
-    MachineInfoDto addMachineInfo(MachineInfoDto machineInfoDto);
+    MachineInfoDto addMachineInfo(Long groupMachineId,MachineInfoDto machineInfoDto);
 
     MachineInfoDto updateMachineInfo(Long machineId, MachineInfoDto machineInfoDto);
 

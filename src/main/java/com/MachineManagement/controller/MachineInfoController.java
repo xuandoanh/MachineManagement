@@ -2,6 +2,9 @@ package com.MachineManagement.controller;
 
 import com.MachineManagement.dto.MachineInfoDto;
 import com.MachineManagement.service.MachineInfoService;
+
+import lombok.AllArgsConstructor;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,15 +12,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/api/machine")
 public class MachineInfoController {
 
     @Autowired
     private MachineInfoService machineInfoService;
 
-    @PostMapping
-    public ResponseEntity<MachineInfoDto> addMachineInfo(@RequestBody MachineInfoDto machineInfoDto) {
-        MachineInfoDto createdMachine = machineInfoService.addMachineInfo(machineInfoDto);
+    @PostMapping("/{id}")
+    public ResponseEntity<MachineInfoDto> addMachineInfo(@PathVariable Long id, @RequestBody MachineInfoDto machineInfoDto) {
+        MachineInfoDto createdMachine = machineInfoService.addMachineInfo(id, machineInfoDto);
         return ResponseEntity.ok(createdMachine);
     }
 

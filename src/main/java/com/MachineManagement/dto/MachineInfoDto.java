@@ -18,6 +18,7 @@ public class MachineInfoDto {
     private String machineType;
     private String machineGroupName;
     private String machineOffice;
+    
     private MachineGroup machineGroup;
     private List<MachineData> machineData;
 }

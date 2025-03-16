@@ -2,6 +2,9 @@ package com.MachineManagement.controller;
 
 import com.MachineManagement.dto.OperatorGroupDto;
 import com.MachineManagement.service.OperatorGroupService;
+
+import lombok.AllArgsConstructor;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/api/operatorGroup")
 public class OperatorGroupController {
 

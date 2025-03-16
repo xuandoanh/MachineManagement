@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.sql.Date;
 import java.sql.Time;
-
-import com.MachineManagement.entity.*;
 @Getter
 @Setter
 @AllArgsConstructor
@@ -17,12 +15,12 @@ import com.MachineManagement.entity.*;
 public class MachineDataDto {
 
     private Long id;
-    private MachineInfo machineInfo; // Keeping it as String to match your entity
+    private Long machineId; // Keeping it as String to match your entity
     private Date dateSql;
     private Time timeSql;
     private int status;
     private int power;
-    private int opId;
+    private Long operatorId;
     private String orCode;
     private String dgCode;
     private int pgTime;
