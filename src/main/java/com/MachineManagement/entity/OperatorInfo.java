@@ -41,7 +41,7 @@ public class OperatorInfo {
     private String operatorStep;
 
      @ManyToOne
-    @JoinColumn(name = "group_id", nullable = false)  // Foreign key referencing MachineGroup
+    @JoinColumn(name = "groupId", nullable = false)  // Foreign key referencing MachineGroup
     @JsonBackReference
     private OperatorGroup operatorGroup;
 }

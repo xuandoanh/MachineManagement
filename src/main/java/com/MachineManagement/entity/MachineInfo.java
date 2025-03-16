@@ -1,20 +1,10 @@
 package com.MachineManagement.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+import lombok.*;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import java.util.List;
 
 @Getter
 @Setter
@@ -41,7 +31,11 @@ public class MachineInfo {
     private String machineOffice;
 
     @ManyToOne
-    @JoinColumn(name = "group_id", nullable = false)  // Foreign key referencing MachineGroup
-    @JsonBackReference
+    @JoinColumn(name = "groupId", nullable = false)  // Foreign key referencing MachineGroup
     private MachineGroup machineGroup;
+
+    // ✅ Add OneToMany for MachineData
+    @OneToMany(mappedBy = "machineInfo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<MachineData> machineData;
 }

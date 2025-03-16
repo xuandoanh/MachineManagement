@@ -1,5 +1,8 @@
 package com.MachineManagement.dto;
 
+import java.util.List;
+
+import com.MachineManagement.entity.MachineData;
 import com.MachineManagement.entity.MachineGroup;
 
 import lombok.*;
@@ -16,4 +19,5 @@ public class MachineInfoDto {
     private String machineGroupName;
     private String machineOffice;
     private MachineGroup machineGroup;
+    private List<MachineData> machineData;
 }
