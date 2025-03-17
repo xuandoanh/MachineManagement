@@ -39,7 +39,6 @@ public class MachineInfoControllerTest {
         machineInfoDto.setMachineOffice("Plant A");
     }
 
-
     @Test
     void testUpdateMachineInfo() {
         when(machineInfoService.updateMachineInfo(anyLong(), any())).thenReturn(machineInfoDto);

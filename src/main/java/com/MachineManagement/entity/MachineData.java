@@ -4,8 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.sql.Date;
 import java.sql.Time;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "CNCtoSQL")
 @Getter
@@ -18,10 +17,8 @@ public class MachineData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "machineId", nullable = false)
-    @JsonBackReference("machine-data-ref")  // ✅ Ensure reference names match
-    private MachineInfo machineInfo;    
+    @Column(name = "machineId", nullable = false)
+    private Long machineId; 
 
     @Column(name = "Date_SQL", nullable = false)
     private Date dateSql;
@@ -35,10 +32,8 @@ public class MachineData {
     @Column(name = "Power", nullable = false)
     private int power;
 
-    @ManyToOne
-    @JoinColumn(name = "OpId", nullable = false)
-    @JsonBackReference("operator-data-ref")  // ✅ Fix: Use a unique reference name
-    private OperatorInfo operatorInfo;  
+    @Column(name = "OpId", nullable = false)
+    private Long operatorId;
 
     @Column(name = "OrCode", length = 50)
     private String orCode;

@@ -1,8 +1,5 @@
 package com.MachineManagement.dto;
 
-import java.util.List;
-
-import com.MachineManagement.entity.MachineData;
 import com.MachineManagement.entity.OperatorGroup;
 
 import lombok.*;
@@ -19,5 +16,4 @@ public class OperatorInfoDto {
     private String operatorSection;
     private String operatorStep;
     private OperatorGroup operatorGroup;
-    private List<MachineData> machineData;
 }

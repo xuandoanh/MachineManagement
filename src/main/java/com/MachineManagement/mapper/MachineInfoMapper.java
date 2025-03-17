@@ -11,8 +11,7 @@ public class MachineInfoMapper {
                 machineInfo.getMachineType(),
                 machineInfo.getMachineGroupName(),
                 machineInfo.getMachineOffice(),
-                machineInfo.getMachineGroup(),
-                machineInfo.getMachineData()
+                machineInfo.getMachineGroup()
         );
     }
 
@@ -23,8 +22,7 @@ public class MachineInfoMapper {
             machineInfoDto.getMachineType(),
             machineInfoDto.getMachineGroupName(),
             machineInfoDto.getMachineOffice(),
-            machineInfoDto.getMachineGroup(),
-            machineInfoDto.getMachineData()
+            machineInfoDto.getMachineGroup()
         );
     }
 }
