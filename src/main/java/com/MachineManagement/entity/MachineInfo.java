@@ -16,16 +16,16 @@ public class MachineInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long machineId;
     
-    @Column(name = "machineName", nullable = false)
+    @Column(name = "machine_name", nullable = false)
     private String machineName;
 
-    @Column(name = "machineType", nullable = false)
+    @Column(name = "machine_type", nullable = false)
     private String machineType;
 
-    @Column(name = "machineGroupName", nullable = false)
+    @Column(name = "machine_group_name", nullable = false)
     private String machineGroupName;
 
-    @Column(name = "machineOffice", nullable = false)
+    @Column(name = "machine_office", nullable = false)
     private String machineOffice;
 
     @ManyToOne

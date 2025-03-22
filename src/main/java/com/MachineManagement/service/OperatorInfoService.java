@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface OperatorInfoService {
     
-    OperatorInfoDto addOperatorInfo(OperatorInfoDto operatorInfoDto);
+    OperatorInfoDto addOperatorInfo(Long id, OperatorInfoDto operatorInfoDto);
 
     OperatorInfoDto updateOperatorInfo(Long operatorId, OperatorInfoDto operatorInfoDto);
 

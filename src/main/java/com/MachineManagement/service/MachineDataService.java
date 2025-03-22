@@ -1,7 +1,10 @@
 package com.MachineManagement.service;
 
 import com.MachineManagement.dto.MachineDataDto;
+
+
 import java.util.List;
+
 
 public interface MachineDataService {
     
@@ -14,4 +17,6 @@ public interface MachineDataService {
     void deleteMachineData(Long id);
 
     List<MachineDataDto> getAllMachineData();
+
+    List<MachineDataDto> getLatestStatusByGroup(Long id);
 }

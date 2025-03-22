@@ -26,9 +26,7 @@ public class MachineDataController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<MachineDataDto> updateMachineData(
-            @PathVariable Long id, 
-            @RequestBody MachineDataDto machineDataDto) {
+    public ResponseEntity<MachineDataDto> updateMachineData(@PathVariable Long id, @RequestBody MachineDataDto machineDataDto) {
         MachineDataDto updatedData = machineDataService.updateMachineData(id, machineDataDto);
         return ResponseEntity.ok(updatedData);
     }
@@ -49,5 +47,11 @@ public class MachineDataController {
     public ResponseEntity<List<MachineDataDto>> getAllMachineData() {
         List<MachineDataDto> machineDataList = machineDataService.getAllMachineData();
         return ResponseEntity.ok(machineDataList);
+    }
+
+    @GetMapping("/latestStatus/{groupId}")
+    public ResponseEntity<List<MachineDataDto>> getLatestStatusByGroup(@PathVariable Long groupId) {
+        List<MachineDataDto> latestStatuses = machineDataService.getLatestStatusByGroup(groupId);
+        return ResponseEntity.ok(latestStatuses);
     }
 }

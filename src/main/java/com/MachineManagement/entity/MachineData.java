@@ -2,11 +2,10 @@ package com.MachineManagement.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.sql.Date;
-import java.sql.Time;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "CNCtoSQL")
+@Table(name = "machine_data")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -17,43 +16,43 @@ public class MachineData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "machineId", nullable = false)
-    private Long machineId; 
+    // Relationship with MachineInfo
+    @ManyToOne
+    @JoinColumn(name = "machine_id", nullable = false) // Foreign key reference
+    private MachineInfo machineInfo;
 
-    @Column(name = "Date_SQL", nullable = false)
-    private Date dateSql;
+    @Column(name = "datetime_sql", nullable = false)
+    private LocalDateTime datetimeSql;
 
-    @Column(name = "Time_SQL", nullable = false)
-    private Time timeSql;
-
-    @Column(name = "Status", nullable = false)
+    @Column(name = "status", nullable = false)
     private int status;
 
-    @Column(name = "Power", nullable = false)
+    @Column(name = "power", nullable = false)
     private int power;
 
-    @Column(name = "OpId", nullable = false)
-    private Long operatorId;
+    // Relationship with OperatorInfo
+    @ManyToOne
+    @JoinColumn(name = "op_id", nullable = false) // Foreign key reference
+    private OperatorInfo operatorInfo;
 
-    @Column(name = "OrCode", length = 50)
+    @Column(name = "or_code", length = 50)
     private String orCode;
 
-    @Column(name = "DgCode", length = 50)
+    @Column(name = "dg_code", length = 50)
     private String dgCode;
 
-    @Column(name = "PGTime", nullable = false)
+    @Column(name = "pg_time", nullable = false)
     private int pgTime;
 
-    @Column(name = "PartNum", nullable = false)
+    @Column(name = "part_num", nullable = false)
     private int partNum;
 
-    @Column(name = "Step", nullable = false)
+    @Column(name = "step", nullable = false)
     private int step;
 
-    @Column(name = "Point", nullable = false)
+    @Column(name = "point", nullable = false)
     private int point;
 
-    @Column(name = "BCode", length = 50)
+    @Column(name = "b_code", length = 50)
     private String bCode;
 }
-

@@ -7,12 +7,11 @@ public class MachineDataMapper {
     public static MachineDataDto mapToDto(MachineData machineData) {
         return new MachineDataDto(
                 machineData.getId(),
-                machineData.getMachineId(),
-                machineData.getDateSql(),
-                machineData.getTimeSql(),
+                machineData.getMachineInfo(),
+                machineData.getDatetimeSql(),
                 machineData.getStatus(),
                 machineData.getPower(),
-                machineData.getOperatorId(),
+                machineData.getOperatorInfo(),
                 machineData.getOrCode(),
                 machineData.getDgCode(),
                 machineData.getPgTime(),
@@ -26,12 +25,11 @@ public class MachineDataMapper {
     public static MachineData mapToEntity(MachineDataDto machineDataDto) {
         return new MachineData(
                 machineDataDto.getId(),
-                machineDataDto.getMachineId(),
-                machineDataDto.getDateSql(),
-                machineDataDto.getTimeSql(),
+                machineDataDto.getMachineInfo(),
+                machineDataDto.getDatetimeSql(),
                 machineDataDto.getStatus(),
                 machineDataDto.getPower(),
-                machineDataDto.getOperatorId(),
+                machineDataDto.getOperatorInfo(),
                 machineDataDto.getOrCode(),
                 machineDataDto.getDgCode(),
                 machineDataDto.getPgTime(),

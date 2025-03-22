@@ -16,10 +16,25 @@ public class OperatorInfoServiceImpl implements OperatorInfoService {
     
     @Autowired
     private OperatorInfoRepository operatorInfoRepository;
-
+    @Autowired
+    private OperatorGroupRepository operatorGroupRepository;
     @Override
-    public OperatorInfoDto addOperatorInfo(OperatorInfoDto operatorInfoDto) {
-        OperatorInfo operatorInfo = OperatorInfoMapper.mapToEntity(operatorInfoDto);
+    public OperatorInfoDto addOperatorInfo(Long id, OperatorInfoDto operatorInfoDto) {
+        // ✅ Ensure OperatorGroup exists before associating with OperatorInfo
+        OperatorGroup operatorGroup = operatorGroupRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Operator Group not found with id: " + id));
+    
+        // ✅ Create a new OperatorInfo and set properties
+        OperatorInfo operatorInfo = new OperatorInfo();
+        operatorInfo.setOperatorName(operatorInfoDto.getOperatorName());
+        operatorInfo.setOperatorOffice(operatorInfoDto.getOperatorOffice());
+        operatorInfo.setOperatorSection(operatorInfoDto.getOperatorSection());
+        operatorInfo.setOperatorStep(operatorInfoDto.getOperatorStep());
+    
+        // ✅ Associate OperatorInfo with the correct OperatorGroup
+        operatorInfo.setOperatorGroup(operatorGroup);
+    
+        // ✅ Save the OperatorInfo and return the DTO
         OperatorInfo savedOperatorInfo = operatorInfoRepository.save(operatorInfo);
         return OperatorInfoMapper.mapToDto(savedOperatorInfo);
     }

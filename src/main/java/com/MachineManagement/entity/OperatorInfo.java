@@ -27,16 +27,16 @@ public class OperatorInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long operatorId;
     
-    @Column(name = "operatorName", nullable = false)
+    @Column(name = "operator_name", nullable = false)
     private String operatorName;
 
-    @Column(name = "operatorOffice", nullable = false)
+    @Column(name = "operator_office", nullable = false)
     private String operatorOffice;
 
-    @Column(name = "operatorSection", nullable = false)
+    @Column(name = "operator_section", nullable = false)
     private String operatorSection;
 
-    @Column(name = "operatorStep", nullable = false)
+    @Column(name = "operator_step", nullable = false)
     private String operatorStep;
 
     @ManyToOne

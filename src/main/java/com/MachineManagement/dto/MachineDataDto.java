@@ -1,12 +1,10 @@
 package com.MachineManagement.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import java.sql.Date;
-import java.sql.Time;
+import lombok.*;
+import java.time.LocalDateTime;
+
+import com.MachineManagement.entity.MachineInfo;
+import com.MachineManagement.entity.OperatorInfo;
 
 @Getter
 @Setter
@@ -15,14 +13,13 @@ import java.sql.Time;
 @Builder
 public class MachineDataDto {
     private Long id;
-    private Long machineId; // Keeping it as String to match your entity
-    private Date dateSql;
-    private Time timeSql;
+    private MachineInfo machineInfo;  
+    private LocalDateTime datetimeSql; 
     private int status;
     private int power;
-    private Long operatorId;
+    private OperatorInfo operatorInfo;
     private String orCode;
-    private String dgCode;
+    private String dgCode; 
     private int pgTime;
     private int partNum;
     private int step;

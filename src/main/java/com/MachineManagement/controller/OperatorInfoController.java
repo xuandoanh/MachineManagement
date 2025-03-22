@@ -19,9 +19,9 @@ public class OperatorInfoController {
     @Autowired
     private OperatorInfoService operatorInfoService;
 
-    @PostMapping
-    public ResponseEntity<OperatorInfoDto> addOperatorInfo(@RequestBody OperatorInfoDto operatorInfoDto) {
-        OperatorInfoDto createdOperator = operatorInfoService.addOperatorInfo(operatorInfoDto);
+    @PostMapping("/{id}")
+    public ResponseEntity<OperatorInfoDto> addOperatorInfo(@PathVariable Long id, @RequestBody OperatorInfoDto operatorInfoDto) {
+        OperatorInfoDto createdOperator = operatorInfoService.addOperatorInfo(id, operatorInfoDto);
         return ResponseEntity.ok(createdOperator);
     }
 
