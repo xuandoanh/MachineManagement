@@ -1,10 +1,10 @@
 package com.MachineManagement.mapper;
 
-import com.MachineManagement.dto.MachineGroupDto;
-import com.MachineManagement.entity.MachineGroup;
+import com.MachineManagement.dto.MachineDto.MachineGroupDto;
+import com.MachineManagement.entity.MachineEntity.MachineGroupEntity;
 
 public class MachineGroupMapper {
-    public static MachineGroupDto mapToDto(MachineGroup machineGroup) {
+    public static MachineGroupDto mapToDto(MachineGroupEntity machineGroup) {
         return new MachineGroupDto(
                 machineGroup.getId(),
                 machineGroup.getGroupName(),
@@ -12,8 +12,8 @@ public class MachineGroupMapper {
         );
     }
 
-    public static MachineGroup mapToEntity(MachineGroupDto machineGroupDto) {
-        return new MachineGroup(
+    public static MachineGroupEntity mapToEntity(MachineGroupDto machineGroupDto) {
+        return new MachineGroupEntity(
             machineGroupDto.getId(),
             machineGroupDto.getGroupName(),
             machineGroupDto.getMachines()

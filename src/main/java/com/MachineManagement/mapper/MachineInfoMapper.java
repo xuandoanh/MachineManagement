@@ -1,10 +1,10 @@
 package com.MachineManagement.mapper;
 
-import com.MachineManagement.dto.MachineInfoDto;
-import com.MachineManagement.entity.MachineInfo;
+import com.MachineManagement.dto.MachineDto.MachineInfoDto;
+import com.MachineManagement.entity.MachineEntity.MachineInfoEntity;
 
 public class MachineInfoMapper {
-     public static MachineInfoDto mapToDto(MachineInfo machineInfo) {
+     public static MachineInfoDto mapToDto(MachineInfoEntity machineInfo) {
         return new MachineInfoDto(
                 machineInfo.getMachineId(),
                 machineInfo.getMachineName(),
@@ -15,8 +15,8 @@ public class MachineInfoMapper {
         );
     }
 
-    public static MachineInfo mapToEntity(MachineInfoDto machineInfoDto) {
-        return new MachineInfo(
+    public static MachineInfoEntity mapToEntity(MachineInfoDto machineInfoDto) {
+        return new MachineInfoEntity(
             machineInfoDto.getMachineId(),
             machineInfoDto.getMachineName(),
             machineInfoDto.getMachineType(),

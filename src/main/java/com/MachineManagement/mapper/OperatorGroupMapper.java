@@ -1,10 +1,10 @@
 package com.MachineManagement.mapper;
 
-import com.MachineManagement.dto.OperatorGroupDto;
-import com.MachineManagement.entity.OperatorGroup;
+import com.MachineManagement.dto.OperatorDto.OperatorGroupDto;
+import com.MachineManagement.entity.OperatorEntity.OperatorGroupEntity;
 
 public class OperatorGroupMapper {
-     public static OperatorGroupDto mapToDto(OperatorGroup operatorGroup) {
+     public static OperatorGroupDto mapToDto(OperatorGroupEntity operatorGroup) {
         return new OperatorGroupDto(
                 operatorGroup.getId(),
                 operatorGroup.getGroupName(),
@@ -12,8 +12,8 @@ public class OperatorGroupMapper {
         );
     }
 
-    public static OperatorGroup mapToEntity(OperatorGroupDto operatorGroupDto) {
-        return new OperatorGroup(
+    public static OperatorGroupEntity mapToEntity(OperatorGroupDto operatorGroupDto) {
+        return new OperatorGroupEntity(
             operatorGroupDto.getId(),
             operatorGroupDto.getGroupName(),
             operatorGroupDto.getOperators()

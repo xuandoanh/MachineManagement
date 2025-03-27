@@ -1,10 +1,10 @@
 package com.MachineManagement.mapper;
 
-import com.MachineManagement.dto.MachineDataDto;
-import com.MachineManagement.entity.MachineData;
+import com.MachineManagement.dto.MachineDto.MachineDataDto;
+import com.MachineManagement.entity.MachineEntity.MachineDataEntity;
 public class MachineDataMapper {
 
-    public static MachineDataDto mapToDto(MachineData machineData) {
+    public static MachineDataDto mapToDto(MachineDataEntity machineData) {
         return new MachineDataDto(
                 machineData.getId(),
                 machineData.getMachineInfo(),
@@ -22,8 +22,8 @@ public class MachineDataMapper {
         );
     }
 
-    public static MachineData mapToEntity(MachineDataDto machineDataDto) {
-        return new MachineData(
+    public static MachineDataEntity mapToEntity(MachineDataDto machineDataDto) {
+        return new MachineDataEntity(
                 machineDataDto.getId(),
                 machineDataDto.getMachineInfo(),
                 machineDataDto.getDatetimeSql(),
